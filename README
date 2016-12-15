@@ -1,0 +1,13 @@
+Console application to sample streamed characters
+
+Usage:
+  bin/sampler sample [options]
+
+Options:
+  --source-type[=SOURCE-TYPE]  Stream source type. Possible values: STDIN, RND [default: "STDIN"]
+  --size[=SIZE]                Sample size [default: 5]
+
+Examples:
+  dd if=/dev/urandom count=100 bs=1MB | base64 | bin/sampler
+  echo 'abcdefghijklmnopqrstuvwxyz' | bin/sampler sample --source-type=STDIN --size=7
+  bin/sampler sample --source-type=RND --size=3

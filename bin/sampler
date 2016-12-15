@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
+use Sampler\Command\SamplerCommand;
+use Symfony\Component\Console\Application;
+$application = new Application();
+$command = new SamplerCommand();
+$application->add($command);
+$application->setDefaultCommand($command->getName(), true);
+$application->run();
